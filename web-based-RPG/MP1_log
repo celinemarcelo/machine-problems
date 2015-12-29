@@ -1,0 +1,288 @@
+MP1_log
+
+10.14.15{
+	- May nabigay na si Celine na Opening Page
+	- Inaral ko muna kung paano siya nag-code. It turns out marami akong nakalimutan sa bootstrap kaya nagreview muna ako (and downloaded w3 references).
+	- will try to do tile prototype
+
+	CHECK - reviewed the specs "appropriate sizes and to .svg or .eps" => animated kaya yung format?
+
+	create table player( slot int not null primary key, name varchar(32), keyblade int, spell int, vit int, agi int, dex int, lvl int, exp int);
+
+	insert into player (slot) values (1);
+	insert into player (slot) values (2);
+	insert into player (slot) values (3);
+
+	select * from player; // 3 empty slots 
+
+	create table monster( mon_id int not null primary key auto_increment, name varchar(32), attack int, spell int, vit int, agi int, dex int, lvl int, exp int);
+
+	- Continuing with overlay
+	- will now do positioning - nakakaasar yung position T_T
+	- mainly used col-md-*
+	- inserting pics
+
+	- choosing map music
+	idle songs
+		- (chill) a walk in Andante
+	fight songs
+		- a fight to the death
+		- apprehension
+		- (exciting +) asterios attack
+		- Battleships bravery 
+		- courage
+		- dance to the death
+		- Darkness of the unknown
+		- Disappeared
+		
+		victory - crossing the finish line
+		low - desire for all that is lost
+		patay - Dive into the heart 
+
+	- Overlay done - position:absolute and z-index
+	- Making C and cgi for controls	
+}
+
+10.18.15{
+	  <!-- 
+            <form  action="http://localhost/cgi-bin/map2.cgi"  method="post" enctype="multipart/form-data" role="form">
+              <input  type="submit" name="button" name="button" class="form-control" value="LEFT">
+            </form>
+           -->
+          
+       <!--      
+            <a href="http://localhost/cgi-bin/map.cgi">
+            <img class="img-responsive" src="/media/ljbaquiran/Acer/Users/user/Pictures/Kingdom_Hearts/Oathkeeper_left.png">
+            </a> -->
+
+	<!-- Fail Image Mapping -->
+    <!-- <img src="arrows_keyblade.png" alt="arrows" usemap="#arrows" />
+      <map name="arrows" idle="map_arrows">
+          <area alt="" title="" href="http://localhost/cgi-bin/map.cgi" shape="poly" coords="151,121,55,160,151,198" alt=""/>
+          <area alt="" title="" href="#" shape="poly" coords="163,111,240,110,201,14" alt="bb"/>
+          <area alt="" title="" href="#" shape="poly" coords="170,281,201,353,232,282" alt="cc"/>
+          <area alt="" title="" href="#" shape="poly" coords="251,120,251,197,348,159" alt="dd"/>
+      </map> -->
+}
+
+draft table{
+          <!-- ROW n -->
+         <!--  <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1">1</div>
+            <div class="col-md-1" >2</div>
+            <div class="col-md-1">3</div>
+            <div class="col-md-1" >4</div>
+            <div class="col-md-1">5</div>
+            <div class="col-md-1" >6</div>
+            <div class="col-md-1">7</div>
+            <div class="col-md-1" >8</div>
+            <div class="col-md-1">9</div>
+            <div class="col-md-2"></div>
+          </div> -->
+
+          <!-- ROW n+1 -->
+          <!-- <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1" >1</div>
+            <div class="col-md-1">2</div>
+            <div class="col-md-1" >3</div>
+            <div class="col-md-1">4</div>
+            <div class="col-md-1" >5</div>
+            <div class="col-md-1">6</div>
+            <div class="col-md-1" >7</div>
+            <div class="col-md-1">8</div>
+            <div class="col-md-1" >9</div>
+            <div class="col-md-2"></div>
+          </div> -->
+
+        <!-- </div> -->}
+
+MAP
+<!-- <img class="img-responsive" src="tile.jpg" style="z-value:1;"> -->
+            <img class="img-responsive" src="tile.jpg" style="position:absolute; z-value:1;">
+            <img class="img-responsive" src="/media/ljbaquiran/Acer/Users/user/Pictures/Kingdom_Hearts/Sora_idle2_live.gif" style="position:absolute; z-value:2;">
+
+            position:absolute; 
+
+Sige sige. Naghanap ako ng sprites ng mga kalaban, konti lang talaga sa KH kaya hinaluan ko ng FF. 5 lang yata nahanap ko all in all
+Tsaka naconnect ko na rin yung mysql sa load. Yung scheme ng Saves table ko ay slot, soriku(sora or riku), name, level, hp,mp, x, y, STR, MAG, VIT, DEX, AGI, created(date)
+
+ <!-- <a href="http://localhost/cgi-bin/map.cgi">
+              <img class="img-responsive" src="up.png">
+            </a> -->
+
+<img class="img-responsive" src="tile.jpg" style="position:absolute; z-value:1;">
+            <img class="img-responsive" src="Sora_running_S1_live.gif" style="position:absolute; z-value:2;">
+
+
+            <!-- ROW 1 -->
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        
+        <!-- ROW 2 -->
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+           <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-1">
+            <img class="img-responsive" src="tile.jpg" style="z-value:1;">
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+
+Brute force compilation of MP1 stuff
+MP1_Marcelo_Baquiran
+
+mysql> select * from Monsters;
++----+-----------+------+------+------+------+------+------+-------+------+
+| id | name      | STR  | MAG  | VIT  | DEX  | AGI  | EXP  | level | rate |
++----+-----------+------+------+------+------+------+------+-------+------+
+|  0 | Shadow    |    2 |    0 |    2 |    2 |    2 |    3 |     1 |   75 |
+|  1 | 3DShadow  |    4 |    0 |    5 |    2 |    2 |    5 |     2 |   60 |
+|  2 | 3DGigas   |    7 |    2 |   15 |    4 |    4 |   10 |     5 |   30 |
+|  3 | 3DSoldier |    5 |    1 |    7 |   10 |   10 |    8 |     5 |   30 |
+|  4 | Bomb      |    4 |    6 |   10 |    2 |    2 |    7 |     3 |   30 |
+|  5 | Cactuar   |    6 |    5 |    5 |    9 |    7 |    7 |     5 |   30 |
++----+-----------+------+------+------+------+------+------+-------+------+
+mysql> describe Monsters;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(20) | YES  |     | NULL    |                |
+| STR   | int(11)     | YES  |     | NULL    |                |
+| MAG   | int(11)     | YES  |     | NULL    |                |
+| VIT   | int(11)     | YES  |     | NULL    |                |
+| DEX   | int(11)     | YES  |     | NULL    |                |
+| AGI   | int(11)     | YES  |     | NULL    |                |
+| EXP   | int(11)     | YES  |     | NULL    |                |
+| level | int(11)     | YES  |     | NULL    |                |
+| rate  | int(11)     | YES  |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+
+
+DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+mysql> select * from Saves;
++------+--------+---------+-------+------+------+------+------+------+------+------+------+------+---------------------+
+| slot | soriku | name    | level | hp   | mp   | x    | y    | STR  | MAG  | VIT  | DEX  | AGI  | created             |
++------+--------+---------+-------+------+------+------+------+------+------+------+------+------+---------------------+
+|    1 | NULL   | NULL    |  NULL | NULL | NULL | NULL | NULL | NULL | NULL | NULL | NULL | NULL | NULL                |
+|    2 | NULL   | NULL    |  NULL | NULL | NULL | NULL | NULL | NULL | NULL | NULL | NULL | NULL | NULL                |
+|    3 | riku   | ImSlot3 |     1 |    1 |    1 |    0 |    0 |    1 |    1 |    1 |    1 |    1 | 2015-10-18 00:00:00 |
++------+--------+---------+-------+------+------+------+------+------+------+------+------+------+---------------------+
+
+mysql> describe Saves;
++---------+-------------+------+-----+-------------------+-----------------------------+
+| Field   | Type        | Null | Key | Default           | Extra                       |
++---------+-------------+------+-----+-------------------+-----------------------------+
+| slot    | int(11)     | NO   | PRI | NULL              | auto_increment              |
+| soriku  | char(5)     | YES  |     | NULL              |                             |
+| name    | varchar(30) | YES  |     | NULL              |                             |
+| level   | int(11)     | YES  |     | NULL              |                             |
+| hp      | int(11)     | YES  |     | NULL              |                             |
+| mp      | int(11)     | YES  |     | NULL              |                             |
+| x       | int(11)     | YES  |     | NULL              |                             |
+| y       | int(11)     | YES  |     | NULL              |                             |
+| STR     | int(11)     | YES  |     | NULL              |                             |
+| MAG     | int(11)     | YES  |     | NULL              |                             |
+| VIT     | int(11)     | YES  |     | NULL              |                             |
+| DEX     | int(11)     | YES  |     | NULL              |                             |
+| AGI     | int(11)     | YES  |     | NULL              |                             |
+| created | datetime    | YES  |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
++---------+-------------+------+-----+-------------------+-----------------------------+
+
+CREATE TABLE MP1.Monsters LIKE mp1_kh.Monsters;
+INSERT INTO MP1.Monsters SELECT * FROM mp1_kh.Monsters;
+
+DROP TABLE IF EXISTS MP1.Monsters;
+CREATE TABLE MP1.Monsters SELECT * FROM mp1_kh.Monsters;
+
+
+CREATE TABLE MP1.Saves LIKE mp1_kh.Saves;
+INSERT INTO MP1.Saves SELECT * FROM mp1_kh.Saves;
+

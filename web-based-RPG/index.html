@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <!-- <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css"> -->
+   
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <!-- <link rel="stylesheet" type="text/css" href="MP1_map_screen_style.css"> -->
+   <link href="icon.ico" rel="shortcut icon">
+  <title>Kingdom Hearts: Zeroth Dimension</title>
+</head>
+
+<body id="index-body">
+   <div class="container-fluid vertical-center">
+      <form class="form center">
+         <div class="form-group" style="font-size:50px;">
+            <button type="button" class="btn btn-primary outline logo" data-toggle="modal" 
+            data-target="#character">
+               New Game
+            </button>
+            <a href="#"data-toggle="popover" data-html="True" data-placement="bottom"
+            data-content="
+               <form class='form form-inline' action='http://localhost/cgi-bin/MP1.cgi' method='post' enctype='multipart/form-data' role='form'>
+                  <div class='form-group'>
+                        <input type='submit' class='btn btn-primary save logo' value='Slot 1' name='slot'>
+                  </div>
+                  <div class='form-group'>
+                        <input type='submit' class='btn btn-primary save logo' value='Slot 2' name='slot'>
+                  </div>
+                  <div class='form-group'>
+                     <input type='submit' class='btn btn-primary save logo' value='Slot 3' name='slot'>
+                  </div>
+               </form>">
+               <button type="button" class="btn btn-primary outline logo">
+                  Load Game
+               </button>
+            </a>   
+         </div>
+      </form>
+   </div>
+
+   <div id="character" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header" style=" background:#33a6cc">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h3 class="modal-title" style="font-family:mana; color:white;">Character Creation</h3>
+            </div>
+            <form class="form" action="http://localhost/cgi-bin/MP1.cgi" method="post" enctype="multipart/form-data" role="form"  onsubmit="return validateForm();">
+               <div class="modal-body">
+                  <div style="float:left; padding-left:50px;">
+                     <div class="radio" style="padding-left:40px;">
+                        <label class="radio-inline">
+                           <input type="radio" name="character" value="sora" checked>
+                           <img src="mp1_images/idle.gif">
+                        </label>
+                        <label class="radio-inline">
+                           <input type="radio" name="character" value="riku">
+                           <img src="mp1_images/idle2.gif">
+                        </label>
+                     </div>
+                        <label for="name" style="font-family:mana; font-size:20px; font-weight:normal;">
+                           Name:
+                        </label>
+                        <input type="text" class="form-control" style="font-family:mana; font-size:18px;" name="name">
+                  </div>
+                  <div style="float:right; padding-right:100px;" class="mana">
+                     <label for="STR" style="font-size:20px; font-weight:normal;">
+                        STR:
+                     </label>
+                     <input type="number" name="STR" value="1" min="1" max="11" step="1"><br>
+                     
+                     <label for="MAG" style="font-size:20px; font-weight:normal;">
+                        MAG:
+                     </label>
+                     <input type="number" name="MAG" value="1" min="1" max="11" step="1"><br>
+                     
+                     <label for="VIT" style="font-size:20px; font-weight:normal;">
+                        VIT:
+                     </label>
+                     <input type="number" name="VIT" value="1" min="1" max="11" step="1"><br>
+                     
+                     <label for="AGI" style="font-size:20px; font-weight:normal;">
+                        AGI:
+                     </label>
+                     <input type="number" name="AGI" value="1" min="1" max="11" step="1"><br>
+                     
+                     <label for="DEX" style="font-size:20px; font-weight:normal;">
+                        DEX:
+                     </label>
+                     <input type="number" name="DEX" value="1" min="1" max="11" step="1">
+                  </div>
+
+                  
+               </div>
+               <div class="modal-footer" style="margin-top:30%; background:#ef4a59">
+                  <div id="alert" style="text-align:left;"></div>
+                  <button type="submit" class="btn btn-primary" style="font-family:prstart; font-weight: normal;">
+                     Confirm
+                  </button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+
+  
+   <script src="bootstrap-3.3.5-dist/jquery-1.11.3.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <!-- <script src="bootstrap-3.3.5-dist/jquery-2.1.4.min.js"></script> -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <!-- <script src="bootstrap-3.3.5-dist/fonts/js/bootstrap.min.js"></script>
+   <script src="bootstrap-3.3.5-dist/fonts/js/bootstrap.js"></script> -->
+   
+   <script>
+      $(document).ready(function(){
+         $('[data-toggle="popover"]').popover();
+      });
+   </script>
+
+   <script type="text/javascript">
+      function validateForm() {
+         var name = document.getElementsByName("name")[0].value;
+         var pts = +document.getElementsByName("STR")[0].value + +document.getElementsByName("MAG")[0].value + +document.getElementsByName("VIT")[0].value + +document.getElementsByName("AGI")[0].value + +document.getElementsByName("DEX")[0].value;
+
+
+         if (name == ''){
+            document.getElementById("alert").innerHTML = "<div class='alert alert-danger mana'>Please enter your character's name.</div>";
+            return false;
+         }
+
+         if( pts > 15  ){ 
+            document.getElementById("alert").innerHTML = "<div class='alert alert-danger mana'>You can only allocate 10 stat points.</div>";
+            return false;
+         } else if(pts < 15){
+            document.getElementById("alert").innerHTML = "<div class='alert alert-danger mana'>Please allocate 10 stat points.</div>";
+            return false;
+         }
+
+         return true;
+      }
+
+   </script>
+
+   <style type="text/css">
+      body, a:hover {
+         /*cursor: url(http://cur.cursors-4u.net/games/gam-2/gam134.cur), progress !important;}*/
+         cursor: url(gam134.cur), progress !important;
+      }
+   </style>
+   <a href="http://www.cursors-4u.com/cursor/2006/04/02/gam134.html" target="_blank" title="Keyblade">
+      <img src="http://cur.cursors-4u.net/cursor.png" border="0" alt="Keyblade" style="position:absolute; top: 0px; right: 0px;" />
+   </a>
+
+
+  <audio autoplay="" loop="">
+      <!-- <source src="http://216.227.134.162/ost/kingdom-hearts-original-soundtrack/vudcowtvzl/101-dearly-beloved.mp3" type="audio/mpeg">  -->
+      <!-- <source src="101-dearly-beloved.mp3" type="audio/mpeg"> -->
+   </audio> 
+</body>
+</html>
