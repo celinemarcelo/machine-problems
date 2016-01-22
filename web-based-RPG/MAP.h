@@ -31,11 +31,11 @@ void map_screen(char *character, char *name, int level, int hp, int mp, int x, i
   <meta name='author' content='Baquiran & Marcelo'>\n\
   <title>MAP SCREEN</title>\n\
   \n\
-  <link href='/MP1_Marcelo_Baquiran/icon.ico' rel='shortcut icon'>\n\
-  <link rel='stylesheet' href='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/css/bootstrap.min.css'>\n\
-  <link rel='stylesheet' href='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css'>\n\
-  <link rel='stylesheet' type='text/css' href='/MP1_Marcelo_Baquiran/style.css'>\n\
-  <link rel='stylesheet' type='text/css' href='/MP1_Marcelo_Baquiran/MP1_map_screen_style.css'>\n\
+  <link href='icon.ico' rel='shortcut icon'>\n\
+  <link rel='stylesheet' href='bootstrap-3.3.5-dist/css/bootstrap.min.css'>\n\
+  <link rel='stylesheet' href='bootstrap-3.3.5-dist/css/bootstrap-theme.min.css'>\n\
+  <link rel='stylesheet' type='text/css' href='style.css'>\n\
+  <link rel='stylesheet' type='text/css' href='MP1_map_screen_style.css'>\n\
 </head>\n\n");
 
   printf("<body id='map-body' style='background-color:transparent'>\n\
@@ -61,7 +61,7 @@ void map_screen(char *character, char *name, int level, int hp, int mp, int x, i
               <input type='hidden' name='y' value='%d'>\n\
               <input type='hidden' name='character' value='%s'>\n\
               <input type='hidden' name='experience' value='%d'>\n\
-              <input class='dir_im' type='image' name='up' src='/MP1_Marcelo_Baquiran/mp1_images/ar_up.png'>\n\
+              <input class='dir_im' type='image' name='up' src='mp1_images/ar_up.png'>\n\
             </form>\n\
           </div>\n\
           <div class='col-md-3'></div>\n\
@@ -84,7 +84,7 @@ void map_screen(char *character, char *name, int level, int hp, int mp, int x, i
               <input type='hidden' name='y' value='%d'>\n\
               <input type='hidden' name='character' value='%s'>\n\
               <input type='hidden' name='experience' value='%d'>\n\
-              <input class='dir_im' type='image' name='left' src='/MP1_Marcelo_Baquiran/mp1_images/ar_left.png'>\n\
+              <input class='dir_im' type='image' name='left' src='mp1_images/ar_left.png'>\n\
             </form>\n\
           </div>\n\
           <div class='col-md-6'>\n\
@@ -103,7 +103,7 @@ void map_screen(char *character, char *name, int level, int hp, int mp, int x, i
               <input type='hidden' name='y' value='%d'>\n\
               <input type='hidden' name='character' value='%s'>\n\
               <input type='hidden' name='experience' value='%d'>\n\
-              <input class='dir_im' type='image' name='right' src='/MP1_Marcelo_Baquiran/mp1_images/ar_right.png'>\n\
+              <input class='dir_im' type='image' name='right' src='mp1_images/ar_right.png'>\n\
             </form>\n\
           </div>\n\
       </div>\n\
@@ -126,7 +126,7 @@ void map_screen(char *character, char *name, int level, int hp, int mp, int x, i
               <input type='hidden' name='y' value='%d'>\n\
               <input type='hidden' name='character' value='%s'>\n\
               <input type='hidden' name='experience' value='%d'>\n\
-              <input class='dir_im' type='image' name='down' src='/MP1_Marcelo_Baquiran/mp1_images/ar_down.png'>\n\
+              <input class='dir_im' type='image' name='down' src='mp1_images/ar_down.png'>\n\
             </form>\n\
           </div>\n\
           <div class='col-md-3'></div>\n\
@@ -137,9 +137,9 @@ void map_screen(char *character, char *name, int level, int hp, int mp, int x, i
     <div class='col-md-8' id='ms_map' style='padding-right: 100px; padding-left: 100px;'>\n\
       <div class='embed-responsive embed-responsive-16by16'> \n\
         <iframe name='map' class='embed-responsive-item' scrolling='no' allowtransparency='true' srcdoc='\n\
-  <link rel=\"stylesheet\" href=\"/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/css/bootstrap.min.css\">\n\
-  <link rel=\"stylesheet\" href=\"/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css\">\n\
-  <link rel=\"stylesheet\" type=\"text/css\" href=\"/MP1_Marcelo_Baquiran/MP1_map_screen_style.css\">\n\
+  <link rel=\"stylesheet\" href=\"bootstrap-3.3.5-dist/css/bootstrap.min.css\">\n\
+  <link rel=\"stylesheet\" href=\"bootstrap-3.3.5-dist/css/bootstrap-theme.min.css\">\n\
+  <link rel=\"stylesheet\" type=\"text/css\" href=\"MP1_map_screen_style.css\">\n\
 \n");
   
   printf("<table class=\"table_map\">\n");
@@ -152,7 +152,7 @@ void map_screen(char *character, char *name, int level, int hp, int mp, int x, i
       if ( (a==y) && (b==x) ) {
           printf("    <td class=\"cell_map\">\n");
           printf("        <div style=\"position:relative; dispay:inline;\" >\n");
-          printf("        <img class=\"img_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/kh_tiled%d.png\" id=\"cell%d\">\n", ((a%2)*2)+1+(b%2),b); 
+          printf("        <img class=\"img_map\" src=\"mp1_images/kh_tiled%d.png\" id=\"cell%d\">\n", ((a%2)*2)+1+(b%2),b); 
 
         // sprite
         if ( !(strcmp(character, "sora"))) {
@@ -160,46 +160,46 @@ void map_screen(char *character, char *name, int level, int hp, int mp, int x, i
           if (motion) {
             switch(motion){
               case 1:
-                printf("    <img class=\"img2_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/idle.gif\" id=\"sprite\">\n");
+                printf("    <img class=\"img2_map\" src=\"mp1_images/idle.gif\" id=\"sprite\">\n");
                 break;
               case 2:
-                printf("    <img class=\"img2_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/s_left.gif\" id=\"sprite\">\n");
+                printf("    <img class=\"img2_map\" src=\"mp1_images/s_left.gif\" id=\"sprite\">\n");
                 break;
               case 3:
-                printf("    <img class=\"img2_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/s_down.gif\" id=\"sprite\">\n");
+                printf("    <img class=\"img2_map\" src=\"mp1_images/s_down.gif\" id=\"sprite\">\n");
                 break;
               case 4:
-                printf("    <img class=\"img2_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/s_right.gif\" id=\"sprite\">\n");
+                printf("    <img class=\"img2_map\" src=\"mp1_images/s_right.gif\" id=\"sprite\">\n");
                 break;    
             }
           } else {
-            printf("    <img class=\"img2_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/idle.gif\" id=\"sprite\">\n");
+            printf("    <img class=\"img2_map\" src=\"mp1_images/idle.gif\" id=\"sprite\">\n");
           }
         } else {
           //riku
           if (motion) {
             switch(motion){
               case 1:
-                printf("    <img class=\"img3_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/idle2.gif\" id=\"sprite\">\n");
+                printf("    <img class=\"img3_map\" src=\"mp1_images/idle2.gif\" id=\"sprite\">\n");
                 break;
               case 2:
-                printf("    <img class=\"img3_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/idle2.gif\" id=\"sprite\">\n");
+                printf("    <img class=\"img3_map\" src=\"mp1_images/idle2.gif\" id=\"sprite\">\n");
                 break;
               case 3:
-                printf("    <img class=\"img3_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/r_down.gif\" id=\"sprite\">\n");
+                printf("    <img class=\"img3_map\" src=\"mp1_images/r_down.gif\" id=\"sprite\">\n");
                 break;
               case 4:
-                printf("    <img class=\"img3_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/idle2.gif\" id=\"sprite\">\n");
+                printf("    <img class=\"img3_map\" src=\"mp1_images/idle2.gif\" id=\"sprite\">\n");
                 break;    
             } 
           } else {
-                printf("    <img class=\"img2_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/idle2.gif\" id=\"sprite\">\n");
+                printf("    <img class=\"img2_map\" src=\"mp1_images/idle2.gif\" id=\"sprite\">\n");
             }
           } 
         printf("</div></td>\n");  
         // printf("</div>\n");
       } else {
-        printf("    <td class=\"cell_map\"><img class=\"img_map\" src=\"/MP1_Marcelo_Baquiran/mp1_images/kh_tiled%d.png\" id=\"cell%d\">", ((a%2)*2)+1+(b%2),b);
+        printf("    <td class=\"cell_map\"><img class=\"img_map\" src=\"mp1_images/kh_tiled%d.png\" id=\"cell%d\">", ((a%2)*2)+1+(b%2),b);
         printf("</td>\n");  
       }
     }
@@ -343,18 +343,18 @@ void map_screen(char *character, char *name, int level, int hp, int mp, int x, i
                </form>\">\n\
             <input type='button' class='btn btn-primary save logo' style='font-size:30px' name='save' value='Save'></a>\n\
             \n\
-            <a href='http://localhost/MP1_Marcelo_Baquiran/index.html'><input type='button' class='btn btn-primary save logo' style='font-size:30px' value='Exit'></a>\n\
+            <a href='http://localhostindex.html'><input type='button' class='btn btn-primary save logo' style='font-size:30px' value='Exit'></a>\n\
           </form>\n\
         </div>\n\
       </div>\n\
     </div>\n\
   </div>\n\
-  <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/jquery-1.11.3.min.js'></script>\n\
+  <script src='bootstrap-3.3.5-dist/jquery-1.11.3.min.js'></script>\n\
   <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->\n\
-  <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/jquery-2.1.4.min.js'></script> -->\n\
+  <script src='bootstrap-3.3.5-dist/jquery-2.1.4.min.js'></script> -->\n\
   <!-- <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script> -->\n\
-  <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/fonts/js/bootstrap.min.js'></script>\n\
-  <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/fonts/js/bootstrap.js'></script> -->\n\
+  <script src='bootstrap-3.3.5-dist/fonts/js/bootstrap.min.js'></script>\n\
+  <script src='bootstrap-3.3.5-dist/fonts/js/bootstrap.js'></script> -->\n\
 \n\
    <script>\n\
       $(document).ready(function(){\n\
@@ -374,10 +374,10 @@ void map_screen(char *character, char *name, int level, int hp, int mp, int x, i
    <style type='text/css'>\n\
       body, a:hover {\n\
          /*cursor: url(http://cur.cursors-4u.net/games/gam-2/gam134.cur), progress !important;}*/\n\
-         cursor: url(/MP1_Marcelo_Baquiran/gam134.cur), progress !important;\n\
+         cursor: url(gam134.cur), progress !important;\n\
       }\n\
    </style>\n\
-  <audio autoplay='' loop=''><source src='/MP1_Marcelo_Baquiran/A-Walk-in-Andante.mp3' type='audio/mpeg'></audio>\n\
+  <audio autoplay='' loop=''><source src='A-Walk-in-Andante.mp3' type='audio/mpeg'></audio>\n\
 </body>\n\
 </html>\n\n", name, level, hp, mp, experience, ((level * level) +3), STR, MAG, VIT, DEX, AGI, x, y, STR, MAG, VIT, DEX, AGI, name, level, hp,  mp, x, y, character, experience, STR, MAG, VIT, DEX, AGI, name, level, hp,  mp, x, y, character, experience, STR, MAG, VIT, DEX, AGI, name, level, hp,  mp, x, y, character, experience);
 }
@@ -394,11 +394,11 @@ void fight_flee(char *character, char *name, int level, int hp, int mp, int x, i
   <meta name='author' content='Baquiran & Marcelo'>\n\
   <title>MAP SCREEN</title>\n\
   \n\
-  <link href='/MP1_Marcelo_Baquiran/icon.ico' rel='shortcut icon'>\n\
-  <link rel='stylesheet' href='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/css/bootstrap.min.css'>\n\
-  <link rel='stylesheet' href='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css'>\n\
-  <link rel='stylesheet' type='text/css' href='/MP1_Marcelo_Baquiran/MP1_map_screen_style.css'>\n\
-  <link rel='stylesheet' type='text/css' href='/MP1_Marcelo_Baquiran/style.css'>\n\
+  <link href='icon.ico' rel='shortcut icon'>\n\
+  <link rel='stylesheet' href='bootstrap-3.3.5-dist/css/bootstrap.min.css'>\n\
+  <link rel='stylesheet' href='bootstrap-3.3.5-dist/css/bootstrap-theme.min.css'>\n\
+  <link rel='stylesheet' type='text/css' href='MP1_map_screen_style.css'>\n\
+  <link rel='stylesheet' type='text/css' href='style.css'>\n\
 </head>\n\n");
 
   printf("<body id='map-body' style='background-color:transparent'>\n\
@@ -424,7 +424,7 @@ void fight_flee(char *character, char *name, int level, int hp, int mp, int x, i
               <input type='hidden' name='y' value='%d'>\n\
               <input type='hidden' name='character' value='%s'>\n\
               <input type='hidden' name='experience' value='%d'>\n\
-              <input class='dir_im' type='image' name='up' src='/MP1_Marcelo_Baquiran/mp1_images/ar_up.png'>\n\
+              <input class='dir_im' type='image' name='up' src='mp1_images/ar_up.png'>\n\
             </form>\n\
           </div>\n\
           <div class='col-md-3'></div>\n\
@@ -447,7 +447,7 @@ void fight_flee(char *character, char *name, int level, int hp, int mp, int x, i
               <input type='hidden' name='y' value='%d'>\n\
               <input type='hidden' name='character' value='%s'>\n\
               <input type='hidden' name='experience' value='%d'>\n\
-              <input class='dir_im' type='image' name='left' src='/MP1_Marcelo_Baquiran/mp1_images/ar_left.png'>\n\
+              <input class='dir_im' type='image' name='left' src='mp1_images/ar_left.png'>\n\
             </form>\n\
           </div>\n\
           <div class='col-md-6'>\n\
@@ -466,7 +466,7 @@ void fight_flee(char *character, char *name, int level, int hp, int mp, int x, i
               <input type='hidden' name='y' value='%d'>\n\
               <input type='hidden' name='character' value='%s'>\n\
               <input type='hidden' name='experience' value='%d'>\n\
-              <input class='dir_im' type='image' name='right' src='/MP1_Marcelo_Baquiran/mp1_images/ar_right.png'>\n\
+              <input class='dir_im' type='image' name='right' src='mp1_images/ar_right.png'>\n\
             </form>\n\
           </div>\n\
       </div>\n\
@@ -489,7 +489,7 @@ void fight_flee(char *character, char *name, int level, int hp, int mp, int x, i
               <input type='hidden' name='y' value='%d'>\n\
               <input type='hidden' name='character' value='%s'>\n\
               <input type='hidden' name='experience' value='%d'>\n\
-              <input class='dir_im' type='image' name='down' src='/MP1_Marcelo_Baquiran/mp1_images/ar_down.png'>\n\
+              <input class='dir_im' type='image' name='down' src='mp1_images/ar_down.png'>\n\
             </form>\n\
           </div>\n\
           <div class='col-md-3'></div>\n\
@@ -502,9 +502,9 @@ void fight_flee(char *character, char *name, int level, int hp, int mp, int x, i
       <div class='embed-responsive embed-responsive-16by16'> \n\
         <iframe name='map' class='embed-responsive-item' scrolling='no' allowtransparency='true' id='map' srcdoc='\n\
         <body style=\"background-color:transparent\">\
-  <link rel=\"stylesheet\" href=\"/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/css/bootstrap.min.css\">\n\
-  <link rel=\"stylesheet\" href=\"/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css\">\n\
-  <link rel=\"stylesheet\" href=\"/MP1_Marcelo_Baquiran/style.css\">\n\
+  <link rel=\"stylesheet\" href=\"bootstrap-3.3.5-dist/css/bootstrap.min.css\">\n\
+  <link rel=\"stylesheet\" href=\"bootstrap-3.3.5-dist/css/bootstrap-theme.min.css\">\n\
+  <link rel=\"stylesheet\" href=\"style.css\">\n\
 \n\
   ");
   printf("<div style=\"background: rgba(0, 0, 0, 0.9); border:solid; border-radius: 15px; color:#00a133; font-size:50px; font-family:zig; text-align:center\" class=\"well\">\
@@ -665,18 +665,18 @@ void fight_flee(char *character, char *name, int level, int hp, int mp, int x, i
                </form>\">\n\
             <input type='button' class='btn btn-primary save logo' style='font-size:30px' name='save' value='Save'></a>\n\
             \n\
-            <a href='http://localhost/MP1_Marcelo_Baquiran/index.html'><input type='button' class='btn btn-primary save logo' style='font-size:30px' value='Exit'></a>\n\
+            <a href='http://localhostindex.html'><input type='button' class='btn btn-primary save logo' style='font-size:30px' value='Exit'></a>\n\
           </form>\n\
         </div>\n\
       </div>\n\
     </div>\n\
   </div>\n\
-  <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/jquery-1.11.3.min.js'></script>\n\
+  <script src='bootstrap-3.3.5-dist/jquery-1.11.3.min.js'></script>\n\
   <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->\n\
-  <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/jquery-2.1.4.min.js'></script> -->\n\
+  <script src='bootstrap-3.3.5-dist/jquery-2.1.4.min.js'></script> -->\n\
   <!-- <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script> -->\n\
-  <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/fonts/js/bootstrap.min.js'></script>\n\
-  <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/fonts/js/bootstrap.js'></script> -->\n\
+  <script src='bootstrap-3.3.5-dist/fonts/js/bootstrap.min.js'></script>\n\
+  <script src='bootstrap-3.3.5-dist/fonts/js/bootstrap.js'></script> -->\n\
   \n\
    <script>\n\
     function disable() {\n\
@@ -690,10 +690,10 @@ void fight_flee(char *character, char *name, int level, int hp, int mp, int x, i
   </script>\n\
    <style type='text/css'>\n\
       body, a:hover {\n\
-         cursor: url(/MP1_Marcelo_Baquiran/gam134.cur), progress !important;\n\
+         cursor: url(gam134.cur), progress !important;\n\
       }\n\
    </style>\n\
-  <audio autoplay='' loop=''><source src='/MP1_Marcelo_Baquiran/Fight.mp3' type='audio/mpeg'></audio>\n\
+  <audio autoplay='' loop=''><source src='Fight.mp3' type='audio/mpeg'></audio>\n\
 </map-body>\n\
 </html>\n\n", name, level, hp, mp, experience, ((level * level) +3), STR, MAG, VIT, DEX, AGI, x, y, STR, MAG, VIT, DEX, AGI, name, level, hp,  mp, x, y, character, experience, STR, MAG, VIT, DEX, AGI, name, level, hp,  mp, x, y, character, experience, STR, MAG, VIT, DEX, AGI, name, level, hp,  mp, x, y, character, experience);
 }
