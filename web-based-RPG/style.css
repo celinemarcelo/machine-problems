@@ -143,3 +143,16 @@ label > input:checked + img{
   background: #00a133;
 }
 
+#allocate:hover, input[type=submit]:hover{
+    text-decoration:underline;
+}
+
+
+input[type=button]:hover{
+    text-decoration:underline;
+}
+
+.table{
+  border-radius: 15px;
+  text-align: center;
+}

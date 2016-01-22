@@ -25,7 +25,7 @@ unsigned short int rand_spawn(unsigned short int rate) {
 
   unsigned short int spawn;
   spawn = rand() % 100 + 1; // 0-100
-  printf("spawn: %d\n", spawn);
+  //printf("spawn: %d\n", spawn);
 
   if(spawn > rate) {
     // no monster
@@ -80,36 +80,4 @@ unsigned int rand_monster_lvl(unsigned int plevel) {
   }
 
   return mlevel;
-}
-
-int main3(int argc, char const *argv[]) {
-  // table dimensions
-  int row = 9;
-  int col = 9;
-  
-  // db info
-  coordinate_t pos_now;
-    pos_now.x = 1;
-    pos_now.y = 1; 
-  int plevel = 10;
-
-  // randomized info
-  int mlevel;
-  int rate = 50;
-
-  if( (pos_now.x != 0) && (pos_now.y != 0) ){
-    // loaded entry then gumalaw  
-    if(rand_spawn(rate) ){
-      printf("AN ENEMY!\n");
-      mlevel = rand_monster_lvl(plevel);
-      printf("Encountered a lvl %d monster\n", mlevel);
-    } else{
-      printf("wala lang\n"); 
-    }
-  } else {
-    //new entry{}
-    pos_now = rand_location(row,col);
-    printf("Starting pos: %d, %d\n", pos_now.x, pos_now.y);
-  }
-  return 0;
 }

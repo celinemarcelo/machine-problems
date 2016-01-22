@@ -30,6 +30,19 @@
   z-index: 3;
   display: block;
   position: absolute;
+  bottom: 0px;
+  right: 0px;
+  /*background-size: 100% 100%;*/
+}
+
+.img3_map {
+  max-width: 100%;
+  height: auto;
+  z-index: 3;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
   /*background-size: 100% 100%;*/
 }
 
@@ -73,7 +86,7 @@ body, a:hover {
 }
 
 body {
-  background: url("mp1_images/map_bg.jpg") no-repeat center center fixed; 
+  background: url("/MP1_Marcelo_Baquiran/mp1_images/map_bg.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

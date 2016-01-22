@@ -19,12 +19,12 @@ void new_game(char *character, char *name, int STR, int MAG, int VIT, int DEX, i
 	srand(time(NULL));
 
 	hp =  (VIT * 3) + 11;
-	mp =  (MAG * 3) + 11;
+	mp =  (MAG * 3) + 5;
 
 	x = (rand() % 9) +1;
-	y = (rand() % 9);
+	y = (rand() % 9) +1;
 
-	map_screen(character, name, 1, (int) hp, (int) mp, x, y, STR, MAG, VIT, DEX, AGI);
+	map_screen(character, name, 1, (int) hp, (int) mp, x, y, STR, MAG, VIT, DEX, AGI, 0, 0);
 }
 
 void load_game(char *slot){
@@ -84,6 +84,9 @@ void load_game(char *slot){
    					for(i = 0; i < num_fields; i++){
        					// printf("<td>%.*s</td>", (int) lengths[i], row[i]);
        					switch(i){
+       						
+       						// slot number then other fields;
+
        						case 1:
       							strcpy(character, row[i]);
       							break;
@@ -152,7 +155,7 @@ void load_game(char *slot){
    		}
 	}
 
-	map_screen(character, name, level, hp, mp, x, y, STR, MAG, VIT, DEX, AGI);
+	map_screen(character, name, level, hp, mp, x, y, STR, MAG, VIT, DEX, AGI, experience, 0);
 	mysql_close(&mysql);
 }
 
@@ -206,19 +209,20 @@ int main(void) {
 	VIT_int = atoi(VIT);
 	//printf("    <p><br>VIT=\"%d\"</p>", VIT_int);
 
-	get_element(&data[0],"AGI", &AGI[0]);
-	AGI[strlen(AGI) - 2] = 0;
-	AGI_int = atoi(AGI);
-	//printf("    <p><br>AGI=\"%d\"</p>", AGI_int);
-
 	get_element(&data[0],"DEX", &DEX[0]);
 	DEX[strlen(DEX) - 2] = 0;
 	DEX_int = atoi(DEX);
 	//printf("    <p><br>DEX=\"%d\"</p>", DEX_int);
 	
+	get_element(&data[0],"AGI", &AGI[0]);
+	AGI[strlen(AGI) - 2] = 0;
+	AGI_int = atoi(AGI);
+	//printf("    <p><br>AGI=\"%d\"</p>", AGI_int);
+
+	
 	if(!strcmp(slot,"")) {
 		//puts("<h1>NEW GAME?</h1>");
-		new_game(character, name, STR_int, MAG_int, VIT_int, AGI_int, DEX_int);
+		new_game(character, name, STR_int, MAG_int, VIT_int, DEX_int, AGI_int);
 	} else {
 		//puts("<h1>LOAD GAME?</h1>");
 		load_game(slot);
