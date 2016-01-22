@@ -133,10 +133,10 @@
          }
 
          if( pts > 15  ){ 
-            document.getElementById("alert").innerHTML = "<div class='alert alert-danger mana'>You can only allocate 10 stat points.</div>";
+            document.getElementById("alert").innerHTML = "<div class='alert alert-danger mana'>You can only allocate 10 stat points. <br> Points allocated:" + pts + "</div>";
             return false;
          } else if(pts < 15){
-            document.getElementById("alert").innerHTML = "<div class='alert alert-danger mana'>Please allocate 10 stat points.</div>";
+            document.getElementById("alert").innerHTML = "<div class='alert alert-danger mana'>Please allocate 10 stat points. <br> Points allocated:" + pts + "</div>";
             return false;
          }
 
