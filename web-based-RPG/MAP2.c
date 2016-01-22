@@ -4,7 +4,7 @@
 #include "ME4.h"
 #include "MAP.h"
 #include "rand.h"
-#include "/opt/lampp/include/mysql.h"
+#include <mysql.h>
 #include <time.h>
 
 #define MAXLEN 1000000

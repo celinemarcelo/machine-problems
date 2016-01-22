@@ -5,7 +5,7 @@
 #include "stats.h"
 #include "rand.h"
 #include "MAP.h"
-#include <mysql/mysql.h>
+#include <mysql.h>
 
 #define MAXLEN 1000000
 #define DATALEN 300
