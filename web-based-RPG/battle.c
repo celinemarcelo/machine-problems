@@ -5,7 +5,7 @@
 #include "stats.h"
 #include "rand.h"
 #include "MAP.h"
-#include "/opt/lampp/include/mysql.h"
+#include <mysql/mysql.h>
 
 #define MAXLEN 1000000
 #define DATALEN 300
@@ -35,8 +35,8 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
   <link href='icon.ico' rel='shortcut icon'>\
   <link rel='stylesheet' href='/bootstrap-3.3.5-dist/css/bootstrap.min.css'>\
   <link rel='stylesheet' href='/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css'>\
-  <link rel='stylesheet' type='text/css' href='/MP1_Marcelo_Baquiran/MP1_map_style.css'>\
-  <link rel='stylesheet' type='text/css' href='/MP1_Marcelo_Baquiran/style.css'>\
+  <link rel='stylesheet' type='text/css' href='/MP1_map_style.css'>\
+  <link rel='stylesheet' type='text/css' href='/style.css'>\
 </head>\
 <body style='background-color:transparent'>\
 ");
@@ -61,7 +61,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
     </div>\
   </div>\
   <div>\
-  <img src='/MP1_Marcelo_Baquiran/mp1_images/%s.gif' style='height:150px;' class='img-responsive center-block'><br>\
+  <img src='/mp1_images/%s.gif' style='height:150px;' class='img-responsive center-block'><br>\
   </div>\
   ", cur_monster.mlevel, cur_monster.mname, cur_monster.mhp, (cur_monster.mVIT * 3) + 11, (float) (cur_monster.mhp / ((cur_monster.mVIT * 3.0) + 11.0)) * 100.0, cur_monster.mhp, (cur_monster.mVIT * 3) + 11, cur_monster.mname);
 
@@ -91,7 +91,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
     ", level, name, hp, (VIT * 3) + 11, (float) (hp / ((VIT * 3.0) + 11.0)) * 100.0, hp, (VIT * 3) + 11, mp, (MAG * 3) + 5, (float) (mp / ((MAG * 3.0) + 5.0)) * 100.0, mp, (MAG * 3) + 5);
     printf("\
     <div style='text-align:center'>\
-      <form action='http://localhost/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data'>\
+      <form action='http://kh.celinemarcelo.com/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data'>\
         <input type='hidden' name='battle_proper' value=1>\
         <input type='hidden' name='STR' value='%d'>\n\
         <input type='hidden' name='MAG' value='%d'>\n\
@@ -175,7 +175,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
     </div>\
   </div>\
   <div>\
-  <img src='/MP1_Marcelo_Baquiran/mp1_images/%s.gif' style='height:150px;' class='img-responsive center-block'><br>\
+  <img src='/mp1_images/%s.gif' style='height:150px;' class='img-responsive center-block'><br>\
   </div>\
   ", cur_monster.mlevel, cur_monster.mname, cur_monster.mhp, (cur_monster.mVIT * 3) + 11, (float) (cur_monster.mhp / ((cur_monster.mVIT * 3.0) + 11.0)) * 100.0, cur_monster.mhp, (cur_monster.mVIT * 3) + 11, cur_monster.mname);
 
@@ -229,7 +229,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
 
     printf("\
 \
-      <form action='http://localhost/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data'>\
+      <form action='http://kh.celinemarcelo.com/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data'>\
         <input type='submit' name='continue' value='>Continue...' style='color:#00a133; font-family:zig; font-size:20px; border:none; background:none;'>\
         <input type='hidden' name='battle_proper' value=1>\
         <input type='hidden' name='STR' value='%d'>\n\
@@ -312,7 +312,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
     </div>\
   </div>\
   <div>\
-  <img src='/MP1_Marcelo_Baquiran/mp1_images/%s.gif' style='height:150px;' class='img-responsive center-block'><br>\
+  <img src='/mp1_images/%s.gif' style='height:150px;' class='img-responsive center-block'><br>\
   </div>\
   ", cur_monster.mlevel, cur_monster.mname, cur_monster.mhp, (cur_monster.mVIT * 3) + 11, (float) (cur_monster.mhp / ((cur_monster.mVIT * 3.0) + 11.0)) * 100.0, cur_monster.mhp, (cur_monster.mVIT * 3) + 11, cur_monster.mname);
     printf("\
@@ -359,7 +359,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
 
     printf("\
 \
-      <form action='http://localhost/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data'>\
+      <form action='http://kh.celinemarcelo.com/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data'>\
         <input type='submit' name='continue' value='>Continue...' style='color:#00a133; font-family:zig; font-size:20px; border:none; background:none;'>\
         <input type='hidden' name='battle_proper' value=1>\
         <input type='hidden' name='STR' value='%d'>\n\
@@ -447,7 +447,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
     </div>\
   </div>\
   <div>\
-  <img src='/MP1_Marcelo_Baquiran/mp1_images/%s.gif' style='height:150px;' class='img-responsive center-block'><br>\
+  <img src='/mp1_images/%s.gif' style='height:150px;' class='img-responsive center-block'><br>\
   </div>\
   ", cur_monster.mlevel, cur_monster.mname, cur_monster.mhp, (cur_monster.mVIT * 3) + 11, (float) (cur_monster.mhp / ((cur_monster.mVIT * 3.0) + 11.0)) * 100.0, cur_monster.mhp, (cur_monster.mVIT * 3) + 11, cur_monster.mname);
     printf("\
@@ -499,7 +499,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
 
     printf("\
 \
-      <form action='http://localhost/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data'>\
+      <form action='http://kh.celinemarcelo.com/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data'>\
         <input type='submit' name='continue' value='>Continue...' style='color:#00a133; font-family:zig; font-size:20px; border:none; background:none;'>\
         <input type='hidden' name='battle_proper' value=1>\
         <input type='hidden' name='STR' value='%d'>\n\
@@ -574,7 +574,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
     </div>\
   </div>\
   <div>\
-  <img src='/MP1_Marcelo_Baquiran/mp1_images/%s.gif' style='height:150px;' class='img-responsive center-block'><br>\
+  <img src='/mp1_images/%s.gif' style='height:150px;' class='img-responsive center-block'><br>\
   </div>\
   ", cur_monster.mlevel, cur_monster.mname, cur_monster.mhp, (cur_monster.mVIT * 3) + 11, (float) (cur_monster.mhp / ((cur_monster.mVIT * 3.0) + 11.0)) * 100.0, cur_monster.mhp, (cur_monster.mVIT * 3) + 11, cur_monster.mname);
     printf("\
@@ -611,7 +611,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
 
     printf("\
 \
-      <form action='http://localhost/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data'>\
+      <form action='http://kh.celinemarcelo.com/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data'>\
         <input type='submit' name='continue' value='>Continue...' style='color:#00a133; font-family:zig; font-size:20px; border:none; background:none;'>\
         <input type='hidden' name='battle_proper' value=1>\
         <input type='hidden' name='STR' value='%d'>\n\
@@ -676,7 +676,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
           <html><body style='background-color:transparent'>\
           	<div style='background: rgba(0, 0, 0, 0.9); border:solid; border-radius: 15px; text-align:center' class='well'>\
             <h1 style='color:#00a133; font-family:zig;'>Successfully escaped from monster!</h1><br>\
-            <form target='_parent' action='http://localhost/cgi-bin/battle.cgi' enctype='multipart/form-data' method='post'>\
+            <form target='_parent' action='http://kh.celinemarcelo.com/cgi-bin/battle.cgi' enctype='multipart/form-data' method='post'>\
               <input type='submit' value='> Back to map screen' style='color:#00a133; font-family:zig; font-size:30px; border:none; background:none;'>\
             	<input type='hidden' value='1' name='redirect'>\
             	<input type='hidden' name='STR' value='%d'>\n\
@@ -733,7 +733,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
                     <div class='modal-header' style=' background:#33a6cc'>\n\
                        <h3 class='modal-title' style='font-family:mana; color:white;'>Stat Allocation</h3>\n\
                     </div>\n\
-                    <form class='form' action='http://localhost/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data' role='form'  onsubmit='return validateStats();' target='_parent'>\n\
+                    <form class='form' action='http://kh.celinemarcelo.com/cgi-bin/battle.cgi' method='post' enctype='multipart/form-data' role='form'  onsubmit='return validateStats();' target='_parent'>\n\
                        <div class='modal-body'>\n\
                           <div class='mana'>\n\
                              <label for='STR' style='font-size:20px; font-weight:normal;'>\n\
@@ -788,9 +788,9 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
                  </div>\n\
               </div>\n\
           </div>\n\
-          <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/jquery-1.11.3.min.js'></script>\n\
-          <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/jquery-2.1.4.min.js'></script>\n\
-          <script src='/MP1_Marcelo_Baquiran/bootstrap-3.3.5-dist/fonts/js/bootstrap.min.js'></script>\n\
+          <script src='/bootstrap-3.3.5-dist/jquery-1.11.3.min.js'></script>\n\
+          <script src='/bootstrap-3.3.5-dist/jquery-2.1.4.min.js'></script>\n\
+          <script src='/bootstrap-3.3.5-dist/fonts/js/bootstrap.min.js'></script>\n\
           <script type='text/javascript'>\n\
             function validateStats() {\n\
             var STR = %d;\n\
@@ -819,7 +819,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
 
 
       printf("\
-            <form target='_parent' action='http://localhost/cgi-bin/battle.cgi' enctype='multipart/form-data' method='post'>\
+            <form target='_parent' action='http://kh.celinemarcelo.com/cgi-bin/battle.cgi' enctype='multipart/form-data' method='post'>\
               <input type='submit' name='back_to_map' value='>Back to map' style='color:#00a133; font-family:zig; font-size:30px; border:none; background:none;'>\n\
         			<input type='hidden' value='1' name='redirect'>\
         			<input type='hidden' name='STR' value='%d'>\n\
@@ -845,19 +845,19 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
       printf("\
         <html><body>\n\
             <div style='background: rgba(0, 0, 0, 0.9); border:solid; border-radius: 15px; text-align:center' class='well'>\n\
-        <img src='/MP1_Marcelo_Baquiran/mp1_images/soragameover.gif'>\
+        <img src='/mp1_images/soragameover.gif'>\
         ");
     } else {
       printf("\
         <html><body>\n\
             <div style='background: rgba(0, 0, 0, 0.9); border:solid; border-radius: 15px; text-align:center' class='well'>\n\
-        <img src='/MP1_Marcelo_Baquiran/mp1_images/rikugameover.gif'>\
+        <img src='/mp1_images/rikugameover.gif'>\
         ");
     }
 
     printf("\n\
               <h1 style='color:#00a133; font-family:zig;'>>Game over</h1><br>\n\
-              <a href='http://localhost/MP1_Marcelo_Baquiran/index.html' style='font-size:30px; color:#00a133; font-family:zig;' target='_parent'>\
+              <a href='http://kh.celinemarcelo.com/index.html' style='font-size:30px; color:#00a133; font-family:zig;' target='_parent'>\
                 >Go to home screen\n\
               </a>\n\
               <style type='text/css'>\
@@ -894,7 +894,7 @@ monster_info get_monster(int level) {
   m_id = rand() % 6;
 
   if (mysql_init(&mysql)) {
-    if (!mysql_real_connect(&mysql, "127.0.0.1", "root", "", "MP1", 0, NULL, 0)) {
+    if (!mysql_real_connect(&mysql, "mydb.cqueamw43gnb.ap-northeast-1.rds.amazonaws.com:3306", "celinemarcelo", "", "MP1", 0, NULL, 0)) {
       //  puts("<h1>Error in connecting database.</h1>");
     } else {
       //  puts("<h1>Connected!</h1>");
