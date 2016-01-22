@@ -67,6 +67,7 @@
                         <input type="text" class="form-control" style="font-family:mana; font-size:18px;" name="name">
                   </div>
                   <div style="float:right; padding-right:100px;" class="mana">
+
                      <label for="STR" style="font-size:20px; font-weight:normal;">
                         STR:
                      </label>
@@ -116,6 +117,7 @@
    
    <script>
       $(document).ready(function(){
+         $('#alert').html("<div class='alert alert-info mana'>Allocate 10 EXTRA stat points.</div>");
          $('[data-toggle="popover"]').popover();
       });
    </script>
@@ -124,7 +126,6 @@
       function validateForm() {
          var name = document.getElementsByName("name")[0].value;
          var pts = +document.getElementsByName("STR")[0].value + +document.getElementsByName("MAG")[0].value + +document.getElementsByName("VIT")[0].value + +document.getElementsByName("AGI")[0].value + +document.getElementsByName("DEX")[0].value;
-
 
          if (name == ''){
             document.getElementById("alert").innerHTML = "<div class='alert alert-danger mana'>Please enter your character's name.</div>";

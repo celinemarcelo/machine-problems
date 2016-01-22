@@ -9,6 +9,6 @@ all:
 	gcc -Wall -o battle.cgi ME4.o battle.o rand.o stats.o `mysql_config --cflags --libs`
 	gcc -Wall -o MAP2.cgi ME4.o MAP2.o rand.o `mysql_config --cflags --libs`
 
-	sudo cp MP1.cgi /opt/lampp/cgi-bin/
-	sudo cp MAP2.cgi /opt/lampp/cgi-bin/
-	sudo cp battle.cgi /opt/lampp/cgi-bin/
+	sudo cp MP1.cgi /usr/lib/cgi-bin/
+	sudo cp MAP2.cgi /usr/lib/cgi-bin/
+	sudo cp battle.cgi /usr/lib/cgi-bin/

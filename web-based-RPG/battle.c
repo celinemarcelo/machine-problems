@@ -5,7 +5,7 @@
 #include "stats.h"
 #include "rand.h"
 #include "MAP.h"
-#include <mysql.h>
+#include <mysql/mysql.h>
 
 #define MAXLEN 1000000
 #define DATALEN 300
@@ -35,7 +35,6 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
   <link href='icon.ico' rel='shortcut icon'>\
   <link rel='stylesheet' href='/bootstrap-3.3.5-dist/css/bootstrap.min.css'>\
   <link rel='stylesheet' href='/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css'>\
-  <link rel='stylesheet' type='text/css' href='/MP1_map_style.css'>\
   <link rel='stylesheet' type='text/css' href='/style.css'>\
 </head>\
 <body style='background-color:transparent'>\
@@ -124,7 +123,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
   </div>\
   <style type='text/css'>\
     body, a:hover {\
-      cursor: url(http://cur.cursors-4u.net/games/gam-2/gam134.cur), progress !important;}\
+      cursor: url(/gam134.cur), progress !important;}\
   </style>\
   <a href='http://www.cursors-4u.com/cursor/2006/04/02/gam134.html' target='_blank' title='Keyblade'>\
     <img src='http://cur.cursors-4u.net/cursor.png' border='0' alt='Keyblade' style='position:absolute; top: 0px; right: 0px;' />\
@@ -261,7 +260,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
 \
   <style type='text/css'>\
     body, a:hover {\
-      cursor: url(http://cur.cursors-4u.net/games/gam-2/gam134.cur), progress !important;}\
+      cursor: url(/gam134.cur), progress !important;}\
   </style>\
   <a href='http://www.cursors-4u.com/cursor/2006/04/02/gam134.html' target='_blank' title='Keyblade'>\
     <img src='http://cur.cursors-4u.net/cursor.png' border='0' alt='Keyblade' style='position:absolute; top: 0px; right: 0px;' />\
@@ -391,7 +390,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
 \
   <style type='text/css'>\
     body, a:hover {\
-      cursor: url(http://cur.cursors-4u.net/games/gam-2/gam134.cur), progress !important;}\
+      cursor: url(/gam134.cur), progress !important;}\
   </style>\
   <a href='http://www.cursors-4u.com/cursor/2006/04/02/gam134.html' target='_blank' title='Keyblade'>\
     <img src='http://cur.cursors-4u.net/cursor.png' border='0' alt='Keyblade' style='position:absolute; top: 0px; right: 0px;' />\
@@ -531,7 +530,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
 \
   <style type='text/css'>\
     body, a:hover {\
-      cursor: url(http://cur.cursors-4u.net/games/gam-2/gam134.cur), progress !important;}\
+      cursor: url(/gam134.cur), progress !important;}\
   </style>\
   <a href='http://www.cursors-4u.com/cursor/2006/04/02/gam134.html' target='_blank' title='Keyblade'>\
     <img src='http://cur.cursors-4u.net/cursor.png' border='0' alt='Keyblade' style='position:absolute; top: 0px; right: 0px;' />\
@@ -644,7 +643,7 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
 \
   <style type='text/css'>\
     body, a:hover {\
-      cursor: url(http://cur.cursors-4u.net/games/gam-2/gam134.cur), progress !important;}\
+      cursor: url(/gam134.cur), progress !important;}\
   </style>\
   <a href='http://www.cursors-4u.com/cursor/2006/04/02/gam134.html' target='_blank' title='Keyblade'>\
     <img src='http://cur.cursors-4u.net/cursor.png' border='0' alt='Keyblade' style='position:absolute; top: 0px; right: 0px;' />\
@@ -862,8 +861,8 @@ void battle_screen(monster_info cur_monster, int pturn, char *character, char *n
               </a>\n\
               <style type='text/css'>\
                 body, a:hover {\
-                  /*cursor: url(http://cur.cursors-4u.net/games/gam-2/gam134.cur), progress !important;}*/\
-                  cursor: url(gam134.cur), progress !important;\
+                  /*cursor: url(gam134.cur), progress !important;}*/\
+                  cursor: url(/gam134.cur), progress !important;\
                 }\
               </style>\
               <a href='http://www.cursors-4u.com/cursor/2006/04/02/gam134.html' target='_blank' title='Keyblade'>\
@@ -894,7 +893,7 @@ monster_info get_monster(int level) {
   m_id = rand() % 6;
 
   if (mysql_init(&mysql)) {
-    if (!mysql_real_connect(&mysql, "mydb.cqueamw43gnb.ap-northeast-1.rds.amazonaws.com:3306", "celinemarcelo", "", "MP1", 0, NULL, 0)) {
+    if (!mysql_real_connect(&mysql, "mydb.cqueamw43gnb.ap-northeast-1.rds.amazonaws.com", "celinemarcelo", "bookerdewitt", "MP1", 3306, NULL, 0)) {
       //  puts("<h1>Error in connecting database.</h1>");
     } else {
       //  puts("<h1>Connected!</h1>");

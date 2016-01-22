@@ -4,7 +4,7 @@
 #include "ME4.h"
 #include "MAP.h"
 #include "rand.h"
-#include <mysql.h>
+#include <mysql/mysql.h>
 #include <time.h>
 
 #define MAXLEN 1000000
@@ -90,7 +90,7 @@ void save_file(char *character, char *name, int level, int hp, int mp, int x, in
 
 	if( mysql ) {
 		// Establish connection with mysql database engine running in host
-		if (mysql_real_connect(mysql, "127.0.0.1", "root", "", "MP1", 0, NULL, 0) ){
+		if (mysql_real_connect(mysql, "mydb.cqueamw43gnb.ap-northeast-1.rds.amazonaws.com", "celinemarcelo", "bookerdewitt", "MP1", 3306, NULL, 0) ){
 			// connection successful
 			// sprintf(query, "select * from Saves WHERE slot=%d", slotnum);
 			sprintf(query, "UPDATE Saves SET soriku=\"%s\", name=\"%s\", level=%d,	hp=%d, mp=%d, x=%d, y=%d, STR=%d, MAG=%d, VIT=%d, DEX=%d, AGI=%d, experience=%d WHERE slot=%d", character, name, level, hp, mp, x, y, STR, MAG, VIT, DEX, AGI, experience,  slotnum);

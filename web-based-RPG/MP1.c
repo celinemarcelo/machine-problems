@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <mysql.h>
+#include <mysql/mysql.h>
 #include "ME4.h"
 #include "MAP.h"
 #include <time.h>
@@ -48,7 +48,7 @@ void load_game(char *slot){
 
 
 	if(mysql_init(&mysql)){
-		if(!mysql_real_connect(&mysql, "127.0.0.1", "root", "", "MP1", 0, NULL, 0)){
+		if(!mysql_real_connect(&mysql, "mydb.cqueamw43gnb.ap-northeast-1.rds.amazonaws.com", "celinemarcelo", "bookerdewitt", "MP1", 3306, NULL, 0)){
 		//	puts("<h1>Error in connecting database.</h1>");
 		} else {
 		//	puts("<h1>Connected!</h1>");

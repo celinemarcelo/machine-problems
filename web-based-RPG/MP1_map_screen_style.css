@@ -86,7 +86,7 @@ body, a:hover {
 }
 
 body {
-  background: url("/MP1_Marcelo_Baquiran/mp1_images/map_bg.jpg") no-repeat center center fixed; 
+  background: url("/mp1_images/map_bg.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
