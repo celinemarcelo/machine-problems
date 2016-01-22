@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <mysql.h>
+#include <mysql/mysql.h>
 #include "ME4.h"
 #include "MAP.h"
 #include <time.h>
